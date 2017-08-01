@@ -92,8 +92,8 @@ export class Transform {
             let croppedCanvas = document.createElement('canvas');
             let ctx = croppedCanvas.getContext('2d');
 
-            croppedCanvas.width = boundRect.width;
-            croppedCanvas.height = boundRect.height;
+            croppedCanvas.width = cropRect.width;
+            croppedCanvas.height = cropRect.height;
 
 
             ctx.drawImage(
@@ -104,8 +104,8 @@ export class Transform {
               cropRect.height,
               0,
               0,
-              boundRect.width,
-              boundRect.height
+              cropRect.width,
+              cropRect.height
             );
 
             resolve(croppedCanvas.toDataURL("image/png"));
